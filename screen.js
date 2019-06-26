@@ -48,12 +48,12 @@ export class Screen {
       let screen = [];
       for (let i = 0; i < total_rows; i++)
       {
-        let row =[]
+        let screen_b =[]
         for(let j = 0; j < total_columns; j++)
         {
-          row.push(" ");
+          screen_b.push(" ");
         }
-        screen.push(row);
+        screen.push(screen_b);
       }
       return screen;
     };
@@ -62,12 +62,12 @@ export class Screen {
       let screen = [];
       for (let i = 0; i < total_rows; i++)
       {
-        let row =[]
+        let screen_b =[]
         for(let j = 0; j < total_columns; j++)
         {
-          row.push(null);
+          screen_b.push(null);
         }
-        screen.push(row);
+        screen.push(screen_b);
       }
       let curr_bombs_count = 0;
       while(curr_bombs_count < total_bombs)
