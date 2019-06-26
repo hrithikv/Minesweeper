@@ -1,9 +1,9 @@
-export class Board {
+export class Screen {
   constructor(total_rows, total_columns, total_bombs) {
     this._total_bombs = total_bombs;
     this._total_tiles = total_rows*total_columns;
-    this._player_screen = Board.generateplayer_screen(total_rows, total_columns);
-    this._bomb_screen = Board.generatebomb_screen(total_rows, total_columns, total_bombs);
+    this._player_screen = Screen.generateplayer_screen(total_rows, total_columns);
+    this._bomb_screen = Screen.generatebomb_screen(total_rows, total_columns, total_bombs);
   };
   get player_screen() {
     return this._player_screen;
@@ -45,7 +45,7 @@ export class Board {
     };
     static generatePlayer_screen(total_rows, total_columns )
     {
-      let board = [];
+      let screen = [];
       for (let i = 0; i < total_rows; i++)
       {
         let row =[]
@@ -53,13 +53,13 @@ export class Board {
         {
           row.push(" ");
         }
-        board.push(row);
+        screen.push(row);
       }
-      return board;
+      return screen;
     };
     static generatebomb_screen(total_rows, total_columns, total_bombs)
     {
-      let board = [];
+      let screen = [];
       for (let i = 0; i < total_rows; i++)
       {
         let row =[]
@@ -67,20 +67,20 @@ export class Board {
         {
           row.push(null);
         }
-        board.push(row);
+        screen.push(row);
       }
       let curr_bombs_count = 0;
       while(curr_bombs_count < total_bombs)
       {
         let random_row_index = Math.floor(Math.random() * total_rows);
         let random_column_index = Math.floor(Math.random() * total_columns);
-        if (board[random_row_index][random_column_index] !== 'B') {
-          board[random_row_index][random_column_index] = 'B';
+        if (screen[random_row_index][random_column_index] !== 'B') {
+          screen[random_row_index][random_column_index] = 'B';
           curr_bombs_count++;
         }
        }
 
-      return board;
+      return screen;
 
     };
 
