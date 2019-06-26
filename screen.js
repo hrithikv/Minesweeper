@@ -21,7 +21,7 @@ export class Screen {
     }
     this._total_tiles--;
   };
-  getNumberOfNeighborBombs(row_index, column_index){
+  find_neighbor_bombs(row_index, column_index){
     const possible_offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1. -1], [1, 0], [1, 1]];
     const total_rows = this._bomb_screen.length;
     const total_columns = this._bomb_screen[0].length;
