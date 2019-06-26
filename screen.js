@@ -22,11 +22,11 @@ export class Screen {
     this._total_tiles--;
   };
   getNumberOfNeighborBombs(row_index, column_index){
-    const neighborOffsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1. -1], [1, 0], [1, 1]];
+    const possible_offsets = [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1. -1], [1, 0], [1, 1]];
     const total_rows = this._bomb_screen.length;
     const total_columns = this._bomb_screen[0].length;
     let total_bombs = 0;
-    neighborOffsets.forEach(offset => {
+    possible_offsets.forEach(offset => {
       const neighbor_row_index = row_index + offset[0];
       const neighbor_column_index = column_index + offset[1];
       if (neighbor_row_index >= 0 && neighbor_row_index < total_rows && neighbor_column_index >= 0 && neighbor_column_index < total_columns) {
